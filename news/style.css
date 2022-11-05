@@ -1,0 +1,22 @@
+html {
+    font-size: 15px;
+}
+.box {
+    display: flex;
+    margin: 20px;
+    font-size: 0.8rem;
+}
+img {
+    width: 30%;
+    height: 150px;
+}
+.box div {
+    width: 70%;
+    margin-left: 10px;
+}
+.box h1 {
+    color: rgb(17, 188, 17);
+}
+span {
+    margin-right: 5px
+}

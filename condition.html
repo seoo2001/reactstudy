@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <style>
+        p {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+    
+    function UserGreeting(props) {
+        return <h1>Welcome back!</h1>;
+    }
+    function GuestGreeting(props) {
+        return <h1>Please sign up.</h1>;
+    }
+
+    function App(props) {
+        const isLoggedIn = props.isLoggedIn
+        if(isLoggedIn) {
+            return <UserGreeting />;
+        }
+        return <GuestGreeting />;
+        // return (
+        //     <div>
+        //         {isLoggedIn ? <UserGreeting /> : <GuestGreeting />};
+        //     </div>
+        // )
+    }
+
+    // 논리 연산자
+    function MailCount(props) {
+        const unreadMessages = props.unreadMessages;
+        return (
+            <div>
+            {unreadMessages.length > 0 &&
+                <h2>
+                You have {unreadMessages.length} unread messages.
+                </h2>
+            }
+            </div>
+        );
+    }
+
+    const messages = ['1', '2', '3', '4']
+    ReactDOM.render(<MailCount unreadMessages = {messages} />, document.getElementById('root'));
+    </script>
+</body>
+</html>

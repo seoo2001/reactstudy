@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <style>
+        .title {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+    
+    // function MyComponent() {
+    //     return (
+    //         <h1>Hi</h1>
+    //     )
+    // }
+    
+    // class MyComponent extends React.Component {
+    //     render() {
+    //         return <h1>hello</h1>
+    //     }
+    // }
+    
+    const MyComponent = (props) => {
+        console.log(props)
+        return (
+            <p>hello {props.name} 나이는 {props.age}</p>
+        )
+    }
+
+    function App() {
+        return (
+            <div>
+                <MyComponent name ="길동" age={10}/>
+                <MyComponent name ="철수" age={20}/>
+                <MyComponent name ="영희"/>
+            </div>
+        )
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+    
+    </script>
+</body>
+</html>

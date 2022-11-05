@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naver News</title>
+    <link rel="stylesheet", href="style.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        
+        const Section = () => {
+            return (
+                <section>
+                    <Box img="./news1.png" h1="경제"/>
+                    <Box img="./news2.png" h1="시사"/>
+                </section>
+            )
+        }
+
+        const Box = (props) => {
+            return (
+                <article className="box">
+                        <img src={props.img} alt="thumbnail" />
+                        <div>
+                            <h1>{props.h1}</h1>
+                            <h2>수상한 용도변경에 땅값 수천억 이득...</h2>
+                            <p>강서에 반포로 불리는 서울 영등포구 한강변 땅</p>
+                            <span>땅잡고</span>
+                            <span>2일 전</span>
+                        </div>
+                </article>
+            )
+        }
+
+        const Header = (props) => {
+            return (
+                <header>
+                    {props.children}
+                </header>
+            )
+        }
+
+        const App = (
+            <main>
+                <Header>
+                    <nav>
+                        <ul style={{display: 'flex', justifyContent: 'space-around'}}>
+                            <li>경제</li>
+                            <li>건설</li>
+                            <li>기타</li>
+
+                        </ul>
+                    </nav> 
+                </Header>
+                <Section />
+            </main>       
+        )
+        
+        ReactDOM.render(App, document.querySelector('#root'))
+    </script>
+</body>
+</html>
