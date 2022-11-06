@@ -1,0 +1,13 @@
+form {
+    margin: auto;
+    max-width: 300px;
+    min-height: 100px;
+    background-color: rgb(177, 236, 212);
+}
+
+input {
+    margin: auto;
+    margin-top: 15px;
+    display: flex;
+
+}
